@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Spam Detection System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #667eea, #764ba2, #6a11cb, #2575fc);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 850px;
+            backdrop-filter: blur(15px);
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            text-align: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .accuracy-box {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: 16px;
+            resize: none;
+            margin-bottom: 20px;
+        }
+
+        textarea:focus {
+            box-shadow: 0 0 25px rgba(255,255,255,0.5);
+        }
+
+        button {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            background: white;
+            color: #6a11cb;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.4);
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .features {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 15px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.12);
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media(max-width:900px) {
+            .container {
+                width: 100%;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="logo">🛡️</div>
+
+        <h1>Smart Spam Detection System</h1>
+
+        <div class="subtitle">
+            AI Powered SMS Classification using Machine Learning
+        </div>
+
+        <div class="accuracy-box">
+            📊 Model Accuracy: {{ accuracy }}%
+        </div>
+
+        <form method="POST">
+
+            <textarea
+                name="message"
+                placeholder="Enter your SMS message here..."
+                required></textarea>
+
+            <button type="submit">
+                🚀 Analyze Message
+            </button>
+
+        </form>
+
+        <div class="result">
+            {{ prediction }}
+        </div>
+
+        <div class="features">
+
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>Machine Learning</h3>
+                <p>AI-based spam classification.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Detection</h3>
+                <p>Instant SMS analysis.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure</h3>
+                <p>Protects users from spam attacks.</p>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Internship Project | Python • Flask • Machine Learning • AI
+        </div>
+
+    </div>
+
+</body>
+</html>
